@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Nokora:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <title>Scrippt</title>
 </head>
@@ -17,16 +18,16 @@
         <div class="container">
             <div class="nav-container">
                 <a class="logo" href="index.php">
-                    SCRIPPT
+                    SCRIBBBLE
                 </a>
-                <a class="entry" href="">
+                <a class="entry" href="form.php">
                 + Add Entry
                 </a>
             </div>
         </div>
     </nav>
     <main>
-        <h1 class="main-heading">SCRIPPTS</h1>
+        <h1 class="main-heading">SCRIBBBLES</h1>
         <div class="container">
             <div class="card">
                 <div class="image-container">
@@ -70,10 +71,10 @@
             </div>
             <ul class="pagination">
                 <li class="pagination-item">
-                    <a class="pagination-link" href="#">&laquo;</a>
+                    <a class="pagination-link pagination-link-arrow" href="#">&laquo;</a>
                 </li>
                 <li class="pagination-item pagination-item-active">
-                    <a class="pagination-link" href="#">1</a></li>
+                    <a class="pagination-link pagination-link-active" href="#">1</a></li>
                 <li class="pagination-item">
                     <a class="pagination-link" href="#">2</a>
                 </li>
@@ -87,10 +88,25 @@
                     <a class="pagination-link" href="#">10</a>
                 </li>
                 <li class="pagination-item">
-                    <a class="pagination-link" href="#">&raquo;</a>
+                    <a class="pagination-link pagination-link-arrow" href="#">&raquo;</a>
                 </li>
             </ul>
         </div>
     </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="container-column">
+                <a class="logo" href="index.php">
+                    SCRIBBBLE
+                </a>
+                <div class="social-icons-container">
+			        <a class="social-icons-link" href="#"><i class="fa fa-github" style="font-size:30px;color:var(--main)"></i></a>
+                    <a class="social-icons-link" href="#"><i class="fa fa-linkedin" style="font-size:30px;color:var(--main)"></i></a>
+                    <a class="social-icons-link" href="#"><i class="fa fa-instagram" style="font-size:30px;color:var(--main)"></i></a>
+		        </div>
+                <div class="copyright">App design by <a class="copyright-link" href=#">webDevMax</a> &#169;2024</div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

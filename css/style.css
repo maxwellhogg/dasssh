@@ -2,9 +2,11 @@
     --main-dark: #292f36;
     --second-dark: #0e544d;
     --main-mid: #fa673b;
+    --main-mid-hover: #ff3b00;
     --second-mid: #54abed;
     --main-light: #f4f7f9;
     --second-light: #d7dbdd;
+    --pagination: lightgray;
 }
 
 * {
@@ -34,7 +36,8 @@ nav {
 
 .logo {
     display: block;
-    height: 4rem;
+    height: auto;
+    width: 8rem;
     line-height: 4rem;
     font-size: 2.4rem;
     font-family: "Indie Flower", cursive;
@@ -61,7 +64,7 @@ nav {
 }
 
 .entry:hover {
-    background-color: #ff5521;
+    background-color: var(--main-mid-hover);
 }
 
 .main-heading {
@@ -99,7 +102,7 @@ nav {
 @media (min-width: 1440px) {
 
     .container {
-        margin: 0 16rem;
+        margin: 0 18rem;
     }
 }
 
@@ -178,12 +181,122 @@ nav {
 
 .pagination-link {
     display: block;
-    color: var(--second-dark);
-    border: 2px solid var(--second-dark);
+    color: var(--main-dark);
+    border: 2px solid lightgray;
     border-radius: 6px;
     width: 2rem;
     height: 2rem;
     text-decoration: none;
     text-align: center;
     line-height: 2rem;;
+}
+
+.pagination-link:hover {
+    color: var(--main-light);
+    border: 2px solid var(--second-mid);
+    background-color: var(--second-mid);
+}
+
+.pagination-link-active {
+    border: 2px solid var(--second-mid);
+    color: 2px solid var(--second-mid);
+}
+
+.pagination-link-arrow {
+    border: 2px solid var(--second-mid);
+    color: var(--main-light);
+    background-color: var(--second-mid);
+}
+
+.pagination-link-arrow:hover {
+    border: 2px solid var(--second-mid);
+    color: var(--second-mid);
+    background-color: var(--main-light);
+}
+
+.footer {
+    margin-top: 4rem;
+    background-color: var(--second-dark);
+    padding: 3rem 0;
+}
+
+.container-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.fa {
+    color: var(--main-mid)
+}
+
+.social-icons-container {
+    display: flex;
+    gap: 1.6rem;
+}
+
+.social-icons-link {
+    text-decoration: none;
+    color: var(--main-mid);
+}
+
+.social-icons-link:hover {
+    color: var(--main-mid-hover)
+}
+
+.copyright {
+    padding-top: 1.2rem;
+    color: var(--main-light);
+    font-size: 0.8rem;
+}
+
+.copyright a {
+    text-decoration: none;
+    color: var(--main-mid);
+}
+
+.copyright a:hover {
+    color: var(--main-mid-hover);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 8rem;;
+}
+
+.form-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-section-item {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--second-dark);
+    text-transform: uppercase;
+}
+
+.form-section-item-input {
+    border-radius: 0.5rem;
+    height: 2.6rem;
+    background: var(--second-light);
+    border: 2px solid var(--second-dark);
+    font-size: 1.4rem;
+    padding: 0 1rem;
+}
+
+.form-section-item-input-textarea {
+    height: 18rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+button {
+    margin-top: 1.6rem;
+    border: none;
+    display: inline-block;
+    width: 10rem;
 }
