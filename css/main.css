@@ -1,14 +1,18 @@
 :root {
     --main-dark: #292f36;
     --second-dark: #0e544d;
-    --main-mid: #ff6b6b;
+    --main-mid: #fa673b;
     --second-mid: #54abed;
     --main-light: #f4f7f9;
+    --second-light: #d7dbdd;
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
+    font-family: "Nokora", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 body {
@@ -19,16 +23,23 @@ nav {
     background-color: var(--second-dark);
     display: flex;
     justify-content: space-between;
-    padding: 2rem 10rem 2rem 10rem;
+    padding: 2rem 4rem;
 }
 
 .logo {
     display: block;
     height: 4rem;
     line-height: 4rem;
-    font-size: 1.4rem;
+    font-size: 2.4rem;
+    font-family: "Indie Flower", cursive;
+    font-weight: 8600;
+    font-style: normal;
     text-decoration: none;
     color: var(--main-light);
+}
+
+.logo:hover {
+    color: #22a195;
 }
 
 .entry {
@@ -41,4 +52,26 @@ nav {
     color: var(--main-light);
     padding: 0 1rem;
     border-radius: 0.6rem;
+}
+
+.entry:hover {
+    background-color: #ff5521;
+}
+
+.main-heading {
+    color: var(--main-dark);
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 900;
+    padding: 4rem 0;
+    font-size: 3rem;
+    letter-spacing: 0.4rem;;
+}
+
+.card {
+    background-color: var(--second-light);
+    margin: 0 4rem 4rem;
+    padding: 2rem;
+    border-radius: 0.8rem;
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.3);
 }
