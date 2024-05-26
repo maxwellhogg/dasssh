@@ -3,7 +3,7 @@
 require __DIR__ . '/inc/functions.inc.php';
 require __DIR__ . '/inc/db-connect.inc.php';
 
-$stmt = $pdo->prepare('SELECT * FROM `entries`');
+$stmt = $pdo->prepare('SELECT * FROM `entries` ORDER BY `date` DESC, `id` DESC');
 $stmt->execute();
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
