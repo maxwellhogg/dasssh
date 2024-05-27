@@ -3,7 +3,12 @@
 require __DIR__ . '/inc/functions.inc.php';
 require __DIR__ . '/inc/db-connect.inc.php';
 
-$stmt = $pdo->prepare('SELECT * FROM `entries` ORDER BY `date` DESC, `id` DESC');
+$perPage = 2;
+$page = $_GET['page'] ?? 1;
+$offset = ($page - 1) * $perPage;
+$stmt = $pdo->prepare('SELECT * FROM `entries` ORDER BY `date` DESC, `id` DESC LIMIT :perPage OFFSET :offset');
+$stmt->bindValue('perPage', (int) $perPage, PDO::PARAM_INT);
+$stmt->bindValue('offset', (int) $offset, PDO::PARAM_INT);
 $stmt->execute();
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -32,13 +37,10 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <a class="pagination-link" href="#">2</a>
     </li>
     <li class="pagination-item">
-        <a class="pagination-link" href="#">...</a>
+        <a class="pagination-link" href="#">3</a>
     </li>
     <li class="pagination-item">
-        <a class="pagination-link" href="#">9</a>
-    </li>
-    <li class="pagination-item">
-        <a class="pagination-link" href="#">10</a>
+        <a class="pagination-link" href="#">4</a>
     </li>
     <li class="pagination-item">
         <a class="pagination-link pagination-link-arrow" href="#">&raquo;</a>
