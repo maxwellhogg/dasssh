@@ -273,7 +273,7 @@ nav {
 }
 
 .form-section-item {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: bold;
     color: var(--second-dark);
     text-transform: uppercase;
@@ -281,11 +281,11 @@ nav {
 
 .form-section-item-input {
     border-radius: 0.5rem;
-    height: 2.6rem;
+    height: 3rem;
     background: var(--second-light);
     border: 2px solid var(--second-dark);
     font-size: 1.4rem;
-    padding: 0 1rem;
+    padding: 0.36rem 1rem;
 }
 
 .form-section-item-input-textarea {
