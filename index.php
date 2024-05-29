@@ -30,7 +30,7 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <div class="card">
     <?php if (!empty($result['image'])): ?>
         <div class="image-container">
-            <img class="thumbnail" src="images/jason.png" alt="">
+            <img class="thumbnail" src="uploads/<?= esc($result['image']); ?>" alt="">
         </div>
     <?php endif; ?>
     <div class="content-container">

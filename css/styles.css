@@ -300,3 +300,7 @@ button {
     display: inline-block;
     width: 10rem;
 }
+
+.continue {
+    background: var(--second-dark);
+}
