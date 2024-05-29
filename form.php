@@ -13,26 +13,23 @@ if (!empty($_POST))
         if ($_FILES['image']['error'] === 0 && $_FILES['image']['size'] !== 0) {
             $removedExtension = pathinfo($_FILES['image']['name'], PATHINFO_FILENAME);
             $name = preg_replace('/[^a-zA-Z0-9]/', '', $removedExtension);
-
             $originalImage = $_FILES['image']['tmp_name'];
             $imageDestinationExt = $name .  '-' . time() . '.jpg';
             $imageDestination = __DIR__ . '/uploads/' . $imageDestinationExt;
-
-            [$width, $height] = getimagesize($originalImage);
-
-            $maxDimensions = 400;
-            $scaleFactor = $maxDimensions / max($width, $height);
-
-            $newWidth = $width * $scaleFactor;
-            $newHeight = $height * $scaleFactor;
-
-            $im = imagecreatefromjpeg($originalImage);
-
-            $newImage = imagecreatetruecolor($newWidth, $newHeight);
-            imagecopyresampled($newImage, $im, 0, 0, 0, 0, $newWidth, $newHeight, $width, $height);
-
-            imagejpeg($newImage, $imageDestination);
-            
+            $imageSize = getimagesize($originalImage);
+            if (!empty($imageSize)) {
+                [$width, $height] = $imageSize;
+                $maxDimensions = 400;
+                $scaleFactor = $maxDimensions / max($width, $height);
+                $newWidth = $width * $scaleFactor;
+                $newHeight = $height * $scaleFactor;
+                $im = imagecreatefromjpeg($originalImage);
+                if (!empty($im)) {
+                    $newImage = imagecreatetruecolor($newWidth, $newHeight);
+                    imagecopyresampled($newImage, $im, 0, 0, 0, 0, $newWidth, $newHeight, $width, $height);    
+                    imagejpeg($newImage, $imageDestination);
+                }
+            }            
         }
     }
 
