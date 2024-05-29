@@ -302,5 +302,29 @@ button {
 }
 
 .continue {
-    background: var(--second-dark);
+    padding: 18svh 0 18svh 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center
+}
+
+@media (min-width: 1440px) {
+    .continue {
+        padding: 22.4svh 0 22.4svh 0;
+    }
+}
+
+.continue-heading {
+    color: var(--second-dark);
+    padding: 1rem;
+}
+
+.continue-link {
+    text-decoration: none;
+    color: var(--main-mid);
+}
+
+.continue-link:hover {
+    color: green;
 }

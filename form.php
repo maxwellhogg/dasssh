@@ -40,7 +40,8 @@ if (!empty($_POST))
     $stmt->bindValue(':image', $imageDestinationExt);
     $stmt->execute();
 
-    echo '<a class="continue" href="index.php">Click here to go back to the message board</a>';
+    // echo '<a class="continue" href="index.php">Click here to go back to the message board</a>';
+    include 'inc/return-to.inc.php';
     die();
 }
 
