@@ -38,7 +38,10 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
             $dateExploded = explode('-', $result['date']);
             $timestamp = mktime(12, 0, 0, $dateExploded[1], $dateExploded[2], $dateExploded[0]);
         ?>
-        <div class="content-date"><?= esc(date('jS-M-Y', $timestamp)); ?></div>
+        <div class="content-name-container">
+            <div class="content-date"><?= esc(date('jS-M-Y', $timestamp)); ?></div>
+            <div class="content-name"><?= esc($result['user']); ?></div>            
+        </div>
         <h2 class="card-heading"><?= esc($result['title']); ?></h2>
         <p class="content-description"><?= nl2br(esc($result['article'])); ?></p>
     </div>

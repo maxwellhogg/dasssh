@@ -5,6 +5,7 @@ require __DIR__ . '/inc/db-connect.inc.php';
 
 if (!empty($_POST))
 {
+    $user       =   (string) ($_POST['user'] ?? '');
     $title      =   (string) ($_POST['title'] ?? '');
     $date       =   (string) ($_POST['date'] ?? '');
     $article    =   (string) ($_POST['entry'] ?? '');
@@ -33,7 +34,8 @@ if (!empty($_POST))
         }
     }
 
-    $stmt = $pdo->prepare('INSERT INTO `entries` (`title`, `date`, `article`, `image`) VALUES (:title, :date, :article, :image)');
+    $stmt = $pdo->prepare('INSERT INTO `entries` (`user`, `title`, `date`, `article`, `image`) VALUES (:user, :title, :date, :article, :image)');
+    $stmt->bindValue(':user', $user);
     $stmt->bindValue(':title', $title);
     $stmt->bindValue(':date', $date);
     $stmt->bindValue(':article', $article);
@@ -50,6 +52,10 @@ if (!empty($_POST))
 <?php require __DIR__ . '/views/header.views.php'; ?>
 <h1 class="main-heading">NEW ENTRY</h1>
 <form class="form" method="POST" action="form.php" enctype="multipart/form-data">
+    <div class="form-section">
+        <label class="form-section-item" for="name">Your Name:</label>
+        <input class="form-section-item-input" type="text" id="user" name="user" required />
+    </div>
     <div class="form-section">
         <label class="form-section-item" for="title">Title:</label>
         <input class="form-section-item-input" type="text" id="title" name="title" required />

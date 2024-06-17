@@ -1,9 +1,9 @@
 :root {
-    --main-dark: #292f36;
-    --second-dark: #0e544d;
-    --main-mid: #fa673b;
-    --main-mid-hover: #ff3b00;
-    --second-mid: #54abed;
+    --main-dark: #001514;
+    --second-dark: #160C28;
+    --main-mid: #E63946;
+    --main-mid-hover: #fa5170;
+    --second-mid: #A8DADC;
     --main-light: #f4f7f9;
     --second-light: #d7dbdd;
     --pagination: lightgray;
@@ -60,7 +60,6 @@ nav {
     text-decoration: none;
     color: var(--main-light);
     padding: 0 1rem;
-    border-radius: 0.6rem;
 }
 
 .entry:hover {
@@ -109,7 +108,7 @@ nav {
 .card {
     background-color: var(--second-light);
     margin-bottom: 4rem;
-    border-radius: 0.8rem;
+    /* border-radius: 0.8rem; */
     box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
@@ -150,6 +149,18 @@ nav {
     padding: 1.2rem 0;
 }
 
+.content-name-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.content-name {
+    text-transform: uppercase;
+    color: var(--main-mid);
+    border: 2px solid var(--main-mid);
+    padding: 0.2rem 1rem;
+}
+
 .card-heading {
     color: var(--second-dark);
     font-weight: 800;
@@ -183,7 +194,7 @@ nav {
     display: block;
     color: var(--main-dark);
     border: 2px solid lightgray;
-    border-radius: 6px;
+    /* border-radius: 6px; */
     width: 2rem;
     height: 2rem;
     text-decoration: none;
