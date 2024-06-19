@@ -140,6 +140,7 @@ nav {
 
 .content-container {
     padding: 1rem 2rem 2rem;
+    width: 100%;
 }
 
 .content-date {
@@ -151,14 +152,33 @@ nav {
 
 .content-name-container {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    width: 100%;
+}
+
+@media (min-width: 1440px) {
+    .content-name-container {
+        flex-direction: row;
+    }
 }
 
 .content-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-transform: uppercase;
+    letter-spacing: 0.2rem;
     color: var(--main-mid);
     border: 2px solid var(--main-mid);
-    padding: 0.2rem 1rem;
+    padding: 0.4rem 1rem;
+    margin-bottom: 1.2rem;
+}
+
+@media (min-width: 1440px) {
+    .content-name {
+        margin-bottom: 0;
+    }
 }
 
 .card-heading {
@@ -291,12 +311,13 @@ nav {
 }
 
 .form-section-item-input {
-    border-radius: 0.5rem;
+    /* border-radius: 0.5rem; */
     height: 3rem;
     background: var(--second-light);
     border: 2px solid var(--second-dark);
     font-size: 1.4rem;
     padding: 0.36rem 1rem;
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.3);
 }
 
 .form-section-item-input-textarea {
