@@ -65,7 +65,7 @@ if (!empty($_POST))
         <input class="form-section-item-input" type="date" id="date" name="date" required />
     </div>
     <div class="form-section">
-        <label class="form-section-item" for="image">Image (Not Required):</label>
+        <label class="form-section-item" for="image">Image (JPEG/JPG only):</label>
         <input class="form-section-item-input" type="file" id="image" name="image" required />
     </div>
     <div class="form-section">
@@ -73,7 +73,7 @@ if (!empty($_POST))
         <textarea class="form-section-item-input form-section-item-input-textarea" name="entry" id="entry" required></textarea>
     </div>
     <button class="entry">
-        Save
+        Post
     </button>
 </form>
 <?php require __DIR__ . '/views/footer.views.php'; ?>
